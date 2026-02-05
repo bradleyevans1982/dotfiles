@@ -1,0 +1,100 @@
+#!/bin/bash
+# ── bluetooth-menu.sh ────────────────────────────────────────────────────────
+# Rofi menu for Bluetooth: toggle power and connect to paired devices
+# Usage: Waybar `bluetooth` module :on-click
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Check if Bluetooth is blocked
+is_blocked() {
+    rfkill list bluetooth | grep -q "Soft blocked: yes"
+}
+
+# Check if Bluetooth service is powered on
+is_powered() {
+    bluetoothctl show | grep -q "Powered: yes"
+}
+
+# Get paired devices: "MAC Name"
+get_paired_devices() {
+    bluetoothctl devices Paired 2>/dev/null | sed 's/Device //'
+}
+
+# Check if a device is connected
+is_connected() {
+    bluetoothctl info "$1" 2>/dev/null | grep -q "Connected: yes"
+}
+
+# Build menu options
+build_menu() {
+    # Power toggle option
+    if is_blocked || ! is_powered; then
+        echo "󰂯  Turn Bluetooth ON"
+    else
+        echo "󰂲  Turn Bluetooth OFF"
+    fi
+
+    echo "───────────────"
+
+    # Only show devices if Bluetooth is on
+    if ! is_blocked && is_powered; then
+        while IFS=' ' read -r mac name; do
+            if [[ -n "$mac" ]]; then
+                # Get full name (may have spaces)
+                name="${name}"
+                if is_connected "$mac"; then
+                    echo "󰂱  $name (Connected)"
+                else
+                    echo "󰂰  $name"
+                fi
+            fi
+        done <<< "$(get_paired_devices)"
+    else
+        echo "󰂲  Bluetooth is off"
+    fi
+}
+
+# Handle selection
+handle_selection() {
+    case "$1" in
+        "󰂯  Turn Bluetooth ON")
+            rfkill unblock bluetooth
+            sleep 0.5
+            bluetoothctl power on
+            ;;
+        "󰂲  Turn Bluetooth OFF")
+            bluetoothctl power off
+            sleep 0.3
+            rfkill block bluetooth
+            ;;
+        "───────────────"|"󰂲  Bluetooth is off")
+            # Separator or info line, do nothing
+            ;;
+        "󰂱  "*)
+            # Connected device - disconnect
+            device_name="${1#󰂱  }"
+            device_name="${device_name% (Connected)}"
+            mac=$(get_paired_devices | grep "$device_name" | awk '{print $1}')
+            if [[ -n "$mac" ]]; then
+                bluetoothctl disconnect "$mac"
+                notify-send "Bluetooth" "Disconnected from $device_name" -i bluetooth
+            fi
+            ;;
+        "󰂰  "*)
+            # Disconnected device - connect
+            device_name="${1#󰂰  }"
+            mac=$(get_paired_devices | grep "$device_name" | awk '{print $1}')
+            if [[ -n "$mac" ]]; then
+                notify-send "Bluetooth" "Connecting to $device_name..." -i bluetooth
+                bluetoothctl connect "$mac"
+            fi
+            ;;
+    esac
+}
+
+# Main
+menu=$(build_menu)
+selected=$(echo -e "$menu" | rofi -dmenu -p "Bluetooth" -i -theme-str 'window {width: 400px;} listview {lines: 8;} element-text {horizontal-align: 0;}')
+
+if [[ -n "$selected" ]]; then
+    handle_selection "$selected"
+fi

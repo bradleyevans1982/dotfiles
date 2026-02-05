@@ -1,0 +1,97 @@
+/* ── Rofi Theme ──────────────────────────────
+   °˖* ૮(  • ᴗ ｡)っ🍸  pewdiepie/archdaemon/dionysh
+   shhheersh
+   Vers 1.0
+   Description: Custom styling for Rofi launcher 
+   ─────────────────────────────────────────── */
+
+/* Global defaults */
+* {
+  font: "JetBrainsMono Nerd Font 11";
+  blur: true;
+  padding: 10px;
+  background-color: transparent;
+  border-radius: 0px;  // remove default rounding globally
+}
+
+/* ── Window ──────────────────────────────── */
+window {
+  width: 450px;
+  height: 400px;
+  location: center;
+  blur: true;
+  border: 2px;
+  border-radius: 3px;
+  border-color: #d79921;
+  background-color: rgba(40, 40, 40, 0.4);
+  padding: 0px;
+  margin: 30px 50px;
+}
+
+/* ── Layout ──────────────────────────────── */
+mainbox {
+  orientation: horizontal;
+  children: [ "borderbox" ];
+  spacing: 0px;
+  padding: 0px;
+}
+
+borderbox {
+  orientation: horizontal;
+  children: [ "contentbox" ];
+  padding: 0px;
+  spacing: 0px;
+  border-radius: 3px;
+  background-color: rgba(40, 40, 40, 0.4);
+}
+
+contentbox {
+  orientation: vertical;
+  children: [ "entry", "listview" ];
+  spacing: 0px;
+  padding: 0px;
+  expand: true;
+}
+
+/* ── Elements ────────────────────────────── */
+element {
+  border-radius: 0px;
+}
+
+element-text, element-icon {
+  padding: 6px 8px;
+  spacing: 2px;
+  text-color: #ebdbb2;
+}
+
+element selected {
+  background-color: #3c3836;
+  text-color: #fabd2f;
+  border-radius: 3px;
+}
+
+/* ── Input & Prompt ──────────────────────── */
+prompt {
+  enabled: false;
+  background-color: transparent;
+  text-color: #d79921;
+  padding: 5px 10px;
+}
+
+entry {
+  padding: 8px;
+  expand: false;
+  font: "JetBrainsMono Nerd Font 12";
+  text-color: #ebdbb2;
+  border-radius: 0px 3px 0px 0px;
+  background-color: rgba(40, 40, 40, 0.4);  // input field
+}
+
+/* ── Listview ────────────────────────────── */
+listview {
+  lines: 1;
+  background-color: rgba(40, 40, 40, 0.4); // gruvbox bg
+  border-radius: 0px 0px 3px 0px;
+  padding: 5px;
+}
+

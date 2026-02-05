@@ -1,0 +1,121 @@
+#!/bin/bash
+# ── wifi-menu.sh ─────────────────────────────────────────────────────────────
+# Rofi menu for WiFi: toggle power and connect to known networks
+# Usage: Waybar `network` module :on-click
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Check if WiFi is enabled
+is_wifi_enabled() {
+    nmcli radio wifi | grep -q "enabled"
+}
+
+# Get current connection
+get_current_ssid() {
+    nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -d: -f2
+}
+
+# Get saved/known networks
+get_saved_networks() {
+    nmcli -t -f name,type connection show | grep ':.*wireless' | cut -d: -f1
+}
+
+# Get available networks (visible)
+get_available_networks() {
+    nmcli -t -f ssid,signal,security dev wifi list | grep -v '^:' | sort -t: -k2 -nr | head -10
+}
+
+# Build menu options
+build_menu() {
+    # Power toggle option
+    if is_wifi_enabled; then
+        echo "󰖪  Turn WiFi OFF"
+    else
+        echo "󰖩  Turn WiFi ON"
+    fi
+
+    echo "───────────────"
+
+    if is_wifi_enabled; then
+        current=$(get_current_ssid)
+
+        # Show current connection first
+        if [[ -n "$current" ]]; then
+            echo "󰖩  $current (Connected)"
+        fi
+
+        # Show available networks
+        while IFS=: read -r ssid signal security; do
+            if [[ -n "$ssid" && "$ssid" != "$current" ]]; then
+                if [[ -n "$security" && "$security" != "--" ]]; then
+                    echo "󰤨  $ssid ($signal%) 󰌾"
+                else
+                    echo "󰤨  $ssid ($signal%)"
+                fi
+            fi
+        done <<< "$(get_available_networks)"
+
+        echo "───────────────"
+        echo "󱛃  Rescan Networks"
+        echo "󰒓  Network Settings"
+    else
+        echo "󰖪  WiFi is off"
+    fi
+}
+
+# Handle selection
+handle_selection() {
+    case "$1" in
+        "󰖩  Turn WiFi ON")
+            nmcli radio wifi on
+            notify-send "WiFi" "WiFi turned on" -i network-wireless
+            ;;
+        "󰖪  Turn WiFi OFF")
+            nmcli radio wifi off
+            notify-send "WiFi" "WiFi turned off" -i network-wireless-offline
+            ;;
+        "───────────────"|"󰖪  WiFi is off")
+            # Separator or info line, do nothing
+            ;;
+        "󰖩  "*)
+            # Connected network - disconnect
+            ssid="${1#󰖩  }"
+            ssid="${ssid% (Connected)}"
+            nmcli connection down "$ssid" 2>/dev/null
+            notify-send "WiFi" "Disconnected from $ssid" -i network-wireless-offline
+            ;;
+        "󱛃  Rescan Networks")
+            notify-send "WiFi" "Scanning for networks..." -i network-wireless
+            nmcli dev wifi rescan 2>/dev/null
+            sleep 1
+            # Reopen menu
+            exec "$0"
+            ;;
+        "󰒓  Network Settings")
+            nm-connection-editor &
+            ;;
+        "󰤨  "*)
+            # Available network - connect
+            ssid="${1#󰤨  }"
+            # Remove signal strength and lock icon
+            ssid=$(echo "$ssid" | sed 's/ ([0-9]*%).*$//')
+
+            # Check if we have a saved connection for this network
+            if nmcli -t -f name connection show | grep -qx "$ssid"; then
+                notify-send "WiFi" "Connecting to $ssid..." -i network-wireless
+                nmcli connection up "$ssid"
+            else
+                # New network - need password, open nm-connection-editor
+                notify-send "WiFi" "New network: Opening settings for $ssid" -i network-wireless
+                nm-connection-editor &
+            fi
+            ;;
+    esac
+}
+
+# Main
+menu=$(build_menu)
+selected=$(echo -e "$menu" | rofi -dmenu -p "WiFi" -i -theme-str 'window {width: 400px;} listview {lines: 12;} element-text {horizontal-align: 0;}')
+
+if [[ -n "$selected" ]]; then
+    handle_selection "$selected"
+fi

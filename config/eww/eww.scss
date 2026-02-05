@@ -1,0 +1,449 @@
+// ──────────────────────────────────────────────────────────────────────────
+//   °˖* ૮(  • ᴗ ｡)っ🍸  pewdiepie/archdaemon/dionysh
+//   shhheersh
+//   EWW HUD style - Gruvbox Theme
+//   vers. 2.0
+// ──────────────────────────────────────────────────────────────────────────
+
+// ── Gruvbox Color Palette ────────────────────────────────────────────────
+$bg:        #282828;
+$bg1:       #3c3836;
+$bg2:       #504945;
+$fg:        #ebdbb2;
+$fg-dim:    #a89984;
+$gray:      #928374;
+
+$red:       #fb4934;
+$green:     #b8bb26;
+$yellow:    #fabd2f;
+$orange:    #fe8019;
+$blue:      #83a598;
+$purple:    #d3869b;
+$aqua:      #8ec07c;
+
+$red-dim:    #cc241d;
+$green-dim:  #98971a;
+$yellow-dim: #d79921;
+$blue-dim:   #458588;
+$purple-dim: #b16286;
+$aqua-dim:   #689d6a;
+
+// ── Visualizer ────────────────────────────────────────────────────────────
+.visualizer-container {
+  background-color: transparent;
+  border-radius: 2px;
+  background: linear-gradient(to top, rgba(40,40,40,0.5), rgba(40,40,40,0));
+  padding: 4px;
+}
+
+.visualizer {
+  color: $aqua;
+  font-family: "JetBrainsMono NFM", monospace;
+  background-color: transparent;
+  font-size: 14px;
+}
+
+.visualizer-text {
+  font-family: "JetBrainsMono NFM", monospace;
+  font-size: 13px;
+  color: $aqua;
+}
+
+
+// ── Windows ───────────────────────────────────────────────────────────────
+window {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+.window {
+  background-color: transparent;
+}
+
+
+// ── Pixel ASCII ───────────────────────────────────────────────────────────
+.pixel-container {
+  background-color: transparent;
+  padding: 2px;
+}
+
+.pixel-ascii {
+  font-family: "JetBrainsMono NFM", monospace;
+  font-size: 10px;
+  color: $yellow;
+  background-color: transparent;
+}
+
+
+// ── Color Classes ─────────────────────────────────────────────────────────
+.red_1    { color: $red; }
+.green_1  { color: $green; }
+.blue_1   { color: $blue; }
+.yellow_1 { color: $yellow; }
+
+.red_2    { color: $red; }
+.green_2  { color: $aqua; }
+.blue_2   { color: $blue; }
+.yellow_2 { color: $orange; }
+
+
+// ── Frames ────────────────────────────────────────────────────────────────
+.outer-frame {
+  border: 2px solid $yellow-dim;
+  border-radius: 3px;
+  padding: 4px;
+  background-color: rgba(40, 40, 40, 0.85);
+  min-width: 350px;
+}
+
+.inner-frame {
+  border: 2px solid $bg2;
+  border-radius: 1px;
+  padding: 6px;
+  background-color: rgba(40, 40, 40, 0.9);
+}
+
+.module-frame {
+  border: 2px solid $bg2;
+  border-radius: 2px;
+  margin: 5px;
+  padding: 1px;
+  min-height: 10px;
+  min-width: 140px;
+  background-color: rgba(60, 56, 54, 0.9);
+  transition: all 0.2s ease-in-out;
+}
+
+.module-frame2 {
+  border: 2px solid $bg2;
+  border-radius: 2px;
+  margin: 5px;
+  padding: 1px;
+  min-height: 10px;
+  min-width: 10px;
+  background-color: rgba(60, 56, 54, 0.9);
+  transition: all 0.2s ease-in-out;
+}
+
+.module-frame:hover {
+  border-color: $yellow;
+  background-image: linear-gradient(to left, rgba(250,189,47,0.1), rgba(40,40,40,0));
+  box-shadow: 0 0 8px rgba(250,189,47,0.3);
+}
+
+
+// ── Labels & Stats ────────────────────────────────────────────────────────
+.label-primary {
+  font-family: "JetBrainsMono NFM", monospace;
+  font-size: 14px;
+  font-weight: bold;
+  color: $fg;
+}
+
+.label-primary2 {
+  font-family: "JetBrainsMono NFM", monospace;
+  font-size: 14px;
+  font-weight: bold;
+  color: $fg;
+  border-radius: 2px;
+  margin-bottom: 32px;
+  margin-left: 17px;
+  margin-right: 3px;
+  margin-top: 3px;
+  padding: 1px;
+  min-height: 10px;
+  min-width: 50px;
+  border: none;
+}
+
+.label-secondary {
+  font-family: "JetBrainsMono NFM", monospace;
+  font-size: 13px;
+  color: $gray;
+}
+
+.internet-clean-box {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.stats-label {
+  font-family: "JetBrainsMono NFM", monospace;
+  font-size: 14px;
+  font-weight: bold;
+  color: $aqua;
+  letter-spacing: 0px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.stats-label2 {
+  font-family: "JetBrainsMono NFM", monospace;
+  font-size: 14px;
+  font-weight: bold;
+  color: $aqua;
+  letter-spacing: 0.5px;
+}
+
+.stats-label3 {
+  font-family: "JetBrainsMono NFM", monospace;
+  font-size: 14px;
+  margin-left: 55px;
+  font-weight: bold;
+  color: $aqua;
+  letter-spacing: 0.5px;
+}
+
+.stats-box {
+  border-radius: 12px;
+  min-height: 10px;
+  min-width: 100px;
+  background-color: rgba(40, 40, 40, 0.9);
+}
+
+
+// ── RAM & Bars ────────────────────────────────────────────────────────────
+.ascii-bar-frame {
+  border: 1px solid $bg2;
+  border-radius: 4px;
+  margin: 4px;
+  padding: 4px;
+  min-width: 220px;
+  font-size: 10px;
+  background-color: rgba(40, 40, 40, 0.9);
+}
+
+.ram-bar {
+  font-family: "JetBrainsMono NFM", monospace;
+  font-size: 14px;
+  color: $aqua;
+  letter-spacing: 0px;
+  padding: 0px;
+}
+
+.ram-bar2 {
+  font-family: "JetBrainsMono NFM", monospace;
+  color: $fg;
+  letter-spacing: 0px;
+  padding: 0px;
+  margin: 0px;
+  font-size: 14px;
+}
+
+.ram-bar4 {
+  font-family: "JetBrainsMono NFM", monospace;
+  color: $fg;
+  letter-spacing: 0.5px;
+  padding: 1px 1px;
+  font-size: 14px;
+}
+
+
+// ── Date & Time ───────────────────────────────────────────────────────────
+.day-time-container {
+  padding: 1em;
+  border-radius: 12px;
+  border: 2px solid $yellow-dim;
+}
+
+.weekday-container {
+  border: 2px solid $bg2;
+  border-radius: 12px;
+  padding: 16px;
+  min-width: 200px;
+}
+
+.weekday-text {
+  font-family: "JetBrainsMono NFM", monospace;
+  font-size: 34px;
+  font-weight: bold;
+  color: $orange;
+}
+
+.time-text {
+  font-family: "JetBrainsMono NFM", monospace;
+  font-size: 18px;
+  color: $aqua;
+  margin-top: 6px;
+}
+
+
+// ── Welcome ───────────────────────────────────────────────────────────────
+.welcome-box {
+  background-color: rgba(40,40,40,0.6);
+  border: 2px solid $yellow-dim;
+  border-radius: 8px;
+  padding: 12px 20px;
+  margin-top: 10px;
+}
+
+.welcome-text { font-family: "JetBrainsMono NFM", monospace; font-size: 18px; font-weight: bold; color: $fg; }
+.welcome-sub  { font-family: "JetBrainsMono NFM", monospace; font-size: 14px; color: $fg; margin-top: 4px; }
+.welcome-label { font-family: "JetBrainsMono NFM", monospace; color: $aqua; font-size: 14px; font-weight: bold; }
+.welcome-value { font-family: "JetBrainsMono NFM", monospace; color: $fg; font-size: 14px; font-weight: bold; letter-spacing: 0.5px; }
+
+
+// ── Shades & Animations ───────────────────────────────────────────────────
+.shade2 { background: linear-gradient(to right, $bg 3px, rgba(40,40,40,0) 15%); }
+.shade  { background-color: $fg; }
+
+$window_visible: true;
+
+.animated {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  opacity: 1;
+}
+
+@if not $window_visible {
+  .animated {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+
+// ── Fans ──────────────────────────────────────────────────────────────────
+.fan-ascii {
+  font-family: "JetBrainsMono NFM", monospace;
+  font-size: 15px;
+  color: $blue;
+  letter-spacing: 3px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.fan-frame, .fan-frame2 {
+  padding: 0;
+  margin: 2px;
+  font-size: 10px;
+  min-height: 31.2px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  margin-left: 5px;
+}
+
+.fan-rpm { font-family: "JetBrainsMono NFM", monospace; font-size: 14px; color: $fg; }
+.fan-rpm2 { font-family: "JetBrainsMono NFM", monospace; font-size: 15px; min-width: 30px; color: $fg; padding: 0; }
+
+
+// ── Workspaces ────────────────────────────────────────────────────────────
+.workspace-ascii {
+  font-family: "JetBrainsMono NFM", monospace;
+  font-size: 14px;
+  color: $blue;
+}
+
+.workspace-ascii-highlight {
+  font-family: "JetBrainsMono NFM", monospace;
+  font-size: 20px;
+  font-weight: bold;
+  color: $yellow;
+}
+
+
+// ── Terminal & Reactor ────────────────────────────────────────────────────
+.terminal-feed {
+  font-family: "JetBrainsMono NFM", monospace;
+  font-size: 12px;
+  color: $aqua;
+  padding-left: 8px;
+}
+
+.reactor-ascii {
+  font-family: "JetBrainsMono NFM", monospace;
+  font-size: 8px;
+  color: $fg;
+  font-weight: bold;
+  min-height: 140px;
+  min-width: 280px;
+}
+
+.ascii-core-status {
+  font-family: "JetBrainsMono NFM", monospace;
+  font-size: 14px;
+  border-radius: 0px;
+  color: $fg;
+}
+
+.ascii-core-status2 {
+  font-family: "JetBrainsMono NFM", monospace;
+  font-size: 14px;
+  padding: 4px;
+  border-radius: 0px;
+  color: $fg;
+}
+
+.log-line {
+  font-family: "JetBrainsMono NFM", monospace;
+  font-size: 14px;
+  color: $fg;
+  padding: 4px;
+}
+
+.ascii-decor1 {
+  font-family: "JetBrainsMono NFM", monospace;
+  font-size: 14px;
+  color: $fg;
+  letter-spacing: 0.5px;
+  padding: 6px;
+  margin: 4px;
+}
+
+
+// ── Info Panels ───────────────────────────────────────────────────────────
+.data-row {
+  background-color: transparent;
+  padding: 2px;
+}
+
+.info-left {
+  background-color: $bg;
+  min-width: 1px;
+  border: 2px solid $bg2;
+  border-radius: 1px;
+}
+
+.info-left2 { min-height: 1px; }
+
+.info-right-box {
+  background-color: $orange;
+  min-height: 31.2px;
+  margin-bottom: 15px;
+  min-width: 26px;
+}
+
+.info-right-text {
+  font-family: "JetBrainsMono NFM", monospace;
+  font-size: 13px;
+  font-weight: bold;
+  color: $bg;
+}
+
+
+// ── Power ─────────────────────────────────────────────────────────────────
+.power-label { font-family: "JetBrainsMono NFM", monospace; font-size: 14px; color: $orange; }
+.power-label2 { font-family: "JetBrainsMono NFM", monospace; font-size: 14px; color: $aqua; }
+.power-label3 { font-family: "JetBrainsMono NFM", monospace; font-size: 14px; color: $blue; }
+
+.power-value { font-family: "JetBrainsMono NFM", monospace; font-size: 14px; color: $fg; margin: 5px; }
+
+.power-header {
+  font-family: "JetBrainsMono NFM", monospace;
+  font-size: 14px;
+  font-weight: bold;
+  color: $yellow;
+  padding: 4px 8px;
+  min-width: 150px;
+}
+
+.power-header-alt {
+  font-family: "JetBrainsMono NFM", monospace;
+  font-size: 10px;
+  font-weight: bold;
+  color: $blue;
+  padding: 4px 8px;
+  letter-spacing: 0.5px;
+  min-width: 15px;
+}

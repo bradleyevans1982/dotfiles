@@ -1,0 +1,9 @@
+#!/bin/bash
+# Tailscale status for Waybar
+
+# Check if tailscale is running (status command returns 0 when running)
+if tailscale status &>/dev/null; then
+    echo '{"text": "[󱁊]", "class": "connected", "tooltip": "Tailscale: Connected"}'
+else
+    echo '{"text": "[󱁊]", "class": "disconnected", "tooltip": "Tailscale: Disconnected"}'
+fi

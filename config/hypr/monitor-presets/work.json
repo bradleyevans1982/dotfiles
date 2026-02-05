@@ -1,0 +1,29 @@
+{
+  "name": "work",
+  "monitors": [
+    {
+      "name": "eDP-1",
+      "x": -11680,
+      "y": 1260,
+      "scale": 1.57,
+      "transform": 0,
+      "disabled": false
+    },
+    {
+      "name": "DP-12",
+      "x": -11920,
+      "y": 0,
+      "scale": 1.0,
+      "transform": 0,
+      "disabled": false
+    },
+    {
+      "name": "DP-14",
+      "x": -9840,
+      "y": -30,
+      "scale": 1.0,
+      "transform": 3,
+      "disabled": false
+    }
+  ]
+}

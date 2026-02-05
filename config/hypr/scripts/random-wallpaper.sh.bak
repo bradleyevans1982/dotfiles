@@ -1,0 +1,29 @@
+#!/bin/bash
+# Randomly select a wallpaper from the wallpapers directory
+
+WALLPAPER_DIR="$HOME/.config/hypr/wallpapers"
+HYPRPAPER_CONF="$HOME/.config/hypr/hyprpaper.conf"
+
+# Dynamically find all wallpapers (jpg, jpeg, png), excluding black.png and bg_wallpaper.png
+mapfile -t WALLPAPERS < <(find "$WALLPAPER_DIR" -maxdepth 1 -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" \) ! -name "black.png" ! -name "bg_wallpaper.png" 2>/dev/null)
+
+# Exit if no wallpapers found
+if [ ${#WALLPAPERS[@]} -eq 0 ]; then
+    notify-send "Wallpaper" "No wallpapers found in $WALLPAPER_DIR"
+    exit 1
+fi
+
+# Pick a random wallpaper
+RANDOM_WALLPAPER="${WALLPAPERS[$RANDOM % ${#WALLPAPERS[@]}]}"
+
+# Update hyprpaper config
+cat > "$HYPRPAPER_CONF" << EOF
+preload = $RANDOM_WALLPAPER
+wallpaper = ,$RANDOM_WALLPAPER
+splash = false
+EOF
+
+# Restart hyprpaper
+pkill hyprpaper
+sleep 0.3
+hyprpaper &disown

@@ -1,0 +1,33 @@
+# Hypridle config - Idle and lid management
+
+general {
+    lock_cmd = pidof hyprlock || hyprlock
+    before_sleep_cmd = loginctl lock-session
+    after_sleep_cmd = hyprctl dispatch dpms on
+}
+
+# Start screensaver after 3 minutes
+listener {
+    timeout = 180
+    on-timeout = /home/bradv/.config/hypr/scripts/screensaver.sh
+    on-resume = pkill -f "alacritty.*screensaver"
+}
+
+# Lock screen after 5 minutes
+listener {
+    timeout = 300
+    on-timeout = pkill -f "alacritty.*screensaver"; loginctl lock-session
+}
+
+# Turn off display after 5.5 minutes
+listener {
+    timeout = 330
+    on-timeout = hyprctl dispatch dpms off
+    on-resume = hyprctl dispatch dpms on
+}
+
+# Suspend disabled - s2idle doesn't wake reliably from keyboard/trackpad
+# listener {
+#     timeout = 900
+#     on-timeout = systemctl suspend
+# }

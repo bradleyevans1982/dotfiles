@@ -1,0 +1,16 @@
+;; ── System Monitor ───────────────────────────────────────────────────
+
+(defwindow cpu_ram_storage_bars
+  :monitor 0
+  :geometry (geometry :x "20px" :y "20px" :width "300px" :height "140px" :anchor "bottom left")
+  :stacking "bg"
+  :exclusive false
+  :focusable false
+
+  (box :class "module-frame" :orientation "vertical" :spacing 4 :style "padding: 10px; background-color: rgba(40, 40, 40, 0.75);"
+    (label :xalign 0 :class "ram-bar2" :text "CPU  ${cpu_bar} ${cpu_usage}% ${cpu_temp}")
+    (label :xalign 0 :class "ram-bar2" :text "GPU  ${gpu_bar} ${gpu_usage}% ${gpu_temp}°C")
+    (label :xalign 0 :class "ram-bar2" :text "RAM  ${ram_bar} ${ram_percent}%")
+    (label :xalign 0 :class "ram-bar2" :text "DISK ${storage_bar} ${storage_percent}%")
+  )
+)

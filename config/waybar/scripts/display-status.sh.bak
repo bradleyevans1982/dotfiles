@@ -1,0 +1,8 @@
+#!/bin/bash
+# Display status for waybar - shows night light state
+
+if pgrep -x hyprsunset > /dev/null; then
+    echo '{"text": "[ 󰍹  ]", "class": "nightlight", "tooltip": "Display Settings (Night Light ON)"}'
+else
+    echo '{"text": "[ 󰍹  ]", "class": "", "tooltip": "Display Settings"}'
+fi
