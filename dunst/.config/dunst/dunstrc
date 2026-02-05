@@ -25,7 +25,7 @@
     progress_bar_corner_radius = 2
 
     # Appearance
-    transparency = 25
+    transparency = 0
     separator_height = 2
     padding = 12
     horizontal_padding = 12
@@ -79,21 +79,21 @@
 # ── Urgency Levels ─────────────────────────────────────────────────────────
 
 [urgency_low]
-    background = "rgba(60, 56, 54, 0.75)"
+    background = "#1d2021D9"
     foreground = "#ebdbb2"
     frame_color = "#504945"
     timeout = 5
     highlight = "#b8bb26"
 
 [urgency_normal]
-    background = "rgba(60, 56, 54, 0.75)"
+    background = "#1d2021D9"
     foreground = "#ebdbb2"
     frame_color = "#d79921"
     timeout = 8
     highlight = "#fabd2f"
 
 [urgency_critical]
-    background = "rgba(40, 40, 40, 0.75)"
+    background = "#1d2021E6"
     foreground = "#ebdbb2"
     frame_color = "#fb4934"
     timeout = 0
