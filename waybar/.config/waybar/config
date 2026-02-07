@@ -29,7 +29,7 @@
   ],
 
   "modules-right": [
-    "custom/openwebui",
+    "custom/lmstudio",
     "custom/cheatsheet",
     "custom/battery",
     "custom/volume",
@@ -227,11 +227,11 @@
     "tooltip": false
   },
 
-  // ── Open WebUI ──────────────────────────────────────────────────────
-  "custom/openwebui": {
-    "format": "[󰭹]",
-    "tooltip-format": "Open WebUI (Ollama)\nClick to toggle",
-    "on-click": "~/.config/waybar/scripts/openwebui-toggle.sh"
+  // ── LMStudio SSH ───────────────────────────────────────────────────
+  "custom/lmstudio": {
+    "format": "[󰚩]",
+    "tooltip-format": "SSH to LMStudio Server\nbradv@bradv-ms-7c02",
+    "on-click": "~/.config/waybar/scripts/lmstudio-ssh.sh"
   },
 
   // ── Cheatsheet ─────────────────────────────────────────────────────

@@ -97,7 +97,7 @@ window#waybar {
 #custom-power,
 #custom-asus-profile,
 #custom-now-playing,
-#custom-openwebui,
+#custom-lmstudio,
 #custom-cheatsheet,
 #network,
 #battery,
@@ -308,6 +308,14 @@ window#waybar {
 }
 
 
+/* === LMStudio ============================================================ */
+
+#custom-lmstudio {
+  color: #83a598;
+  font-weight: bold;
+}
+
+
 /* === Cheatsheet ========================================================== */
 
 #custom-cheatsheet {
@@ -322,7 +330,7 @@ window#waybar {
 #custom-microphone:hover,
 #custom-volume:hover,
 #custom-now-playing:hover,
-#custom-openwebui:hover,
+#custom-lmstudio:hover,
 #custom-cheatsheet:hover,
 #pulseaudio:hover,
 #network:hover,
@@ -365,7 +373,7 @@ tooltip label {
 #bluetooth,
 #custom-microphone,
 #custom-vpn,
-#custom-openwebui,
+#custom-lmstudio,
 #custom-cheatsheet {
   font-size: 16px;
   padding: 2px 4px;

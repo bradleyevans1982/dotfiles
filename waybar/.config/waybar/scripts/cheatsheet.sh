@@ -29,8 +29,7 @@ SUPER + Arrows        Move Focus
 SUPER + Shift + Arrows   Swap Windows
 SUPER + Shift + R     Reload Hyprland
 SUPER + K             This Cheatsheet
-SUPER + O             Toggle Open WebUI
-SUPER + G             Toggle Ollama Chat
+SUPER + O             LMStudio SSH Chat
 
 ───────────────────────────────────────
   APP SHORTCUTS
