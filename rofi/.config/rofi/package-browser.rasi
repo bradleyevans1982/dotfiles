@@ -20,7 +20,7 @@ window {
   blur: true;
   border: 2px;
   border-radius: 3px;
-  border-color: #689d6a;
+  border-color: #d79921;
   background-color: rgba(40, 40, 40, 0.4);
   padding: 0px;
   margin: 30px 50px;
@@ -55,12 +55,12 @@ contentbox {
 message {
   padding: 8px 12px;
   background-color: rgba(60, 56, 54, 0.6);
-  text-color: #689d6a;
+  text-color: #d79921;
   border-radius: 3px 3px 0px 0px;
 }
 
 textbox {
-  text-color: #689d6a;
+  text-color: #d79921;
   background-color: transparent;
 }
 
@@ -73,7 +73,7 @@ inputbar {
 prompt {
   enabled: true;
   background-color: transparent;
-  text-color: #689d6a;
+  text-color: #d79921;
   padding: 8px 10px;
 }
 
@@ -81,7 +81,7 @@ entry {
   padding: 8px;
   expand: true;
   font: "JetBrainsMono Nerd Font 12";
-  text-color: #8ec07c;
+  text-color: #fabd2f;
   border-radius: 0px;
   background-color: rgba(40, 40, 40, 0.4);
 }
@@ -97,7 +97,7 @@ listview {
 
 scrollbar {
   width: 4px;
-  handle-color: #689d6a;
+  handle-color: #d79921;
   handle-width: 4px;
   background-color: rgba(60, 56, 54, 0.4);
 }
@@ -110,11 +110,11 @@ element {
 element-text, element-icon {
   padding: 6px 8px;
   spacing: 2px;
-  text-color: #8ec07c;
+  text-color: #fabd2f;
 }
 
 element selected {
   background-color: #3c3836;
-  text-color: #8ec07c;
+  text-color: #fabd2f;
   border-radius: 3px;
 }

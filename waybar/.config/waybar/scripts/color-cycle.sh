@@ -112,6 +112,27 @@ if [[ "$1" == "--apply" ]]; then
         done
     fi
 
+    # Update Firefox userChrome.css - replace ALL accent colors
+    FIREFOX_CHROME="$HOME/.mozilla/firefox/ln0iwwkx.default-release/chrome/userChrome.css"
+    if [[ -f "$FIREFOX_CHROME" ]]; then
+        for old in $ALL_BRIGHT; do
+            sed -i "s/$old/$accent/gI" "$FIREFOX_CHROME"
+        done
+        for old in $ALL_DIM; do
+            sed -i "s/$old/$accent_dim/gI" "$FIREFOX_CHROME"
+        done
+    fi
+
+    # Update Starship prompt - replace ALL accent colors
+    STARSHIP_CONFIG="$HOME/.config/starship.toml"
+    if [[ -f "$STARSHIP_CONFIG" ]]; then
+        for old in $ALL_BRIGHT; do
+            sed -i "s/$old/$accent/gI" "$STARSHIP_CONFIG"
+        done
+        for old in $ALL_DIM; do
+            sed -i "s/$old/$accent_dim/gI" "$STARSHIP_CONFIG"
+        done
+    fi
 
     exit 0
 fi
