@@ -6,7 +6,7 @@
 
 * {
   font-family: "JetBrainsMono NFM", "JetBrainsMono Nerd Font Mono", monospace;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 waybar * {
@@ -26,9 +26,7 @@ window#waybar {
   transition-property: background-color;
   transition-duration: 0.5s;
   color: #ebdbb2;
-  border: 3px solid #d79921;
-  border-left: 3px solid #fabd2f;
-  border-right: 3px solid #fabd2f;
+  border: none;
 }
 
 
@@ -42,11 +40,11 @@ window#waybar {
 #workspaces button {
   all: initial;
   font-family: "JetBrainsMono NFM", "JetBrainsMono Nerd Font Mono", monospace;
-  font-size: 12px;
+  font-size: 10px;
   min-width: 0;
   box-shadow: inherit;
-  padding: 6px 6px;
-  margin: 6px 3px;
+  padding: 5px 6px;
+  margin: 4px 2px;
   border-radius: 4px;
   background-color: #3c3836;
   color: #83a598;
@@ -65,9 +63,8 @@ window#waybar {
 
 /* === Left Module Icons (larger) ========================================== */
 
-#clock,
-#custom-now-playing {
-  font-size: 14px;
+#clock {
+  font-size: 11px;
 }
 
 
@@ -106,8 +103,8 @@ window#waybar {
 #custom-vpn,
 #clock,
 #tray {
-  padding: 6px 12px;
-  margin: 6px 6px;
+  padding: 5px 10px;
+  margin: 4px 4px;
   background-color: #3c3836;
   border: 2px solid #504945;
   border-radius: 2px;
@@ -179,7 +176,7 @@ window#waybar {
 
 #clock {
   font-weight: bold;
-  font-size: 12px;
+  font-size: 10px;
   color: #7aa2f7;
 }
 
@@ -188,7 +185,7 @@ window#waybar {
 
 #custom-asus-profile {
   font-weight: bold;
-  font-size: 12px;
+  font-size: 10px;
   color: #fe8019;
 }
 
@@ -203,7 +200,7 @@ window#waybar {
 
 #custom-now-playing {
   color: #d3869b;
-  font-size: 12px;
+  font-size: 8px;
 }
 
 #custom-now-playing.playing {
@@ -223,7 +220,7 @@ window#waybar {
 
 #custom-vpn {
   font-weight: bold;
-  font-size: 12px;
+  font-size: 10px;
   transition: all 0.2s ease-in-out;
 }
 
@@ -277,7 +274,7 @@ window#waybar {
 /* === Tray ================================================================ */
 
 #tray {
-  padding: 4px 8px;
+  padding: 2px 6px;
   background-color: #282828;
 }
 
@@ -286,8 +283,8 @@ window#waybar {
 
 #custom-work-left,
 #custom-work-right {
-  padding: 6px 6px;
-  margin: 6px 3px;
+  padding: 3px 5px;
+  margin: 3px 2px;
 }
 
 #custom-workspace-1:hover,
@@ -321,6 +318,46 @@ window#waybar {
 #custom-cheatsheet {
   color: #fe8019;
   font-weight: bold;
+}
+
+
+/* === Color Cycle ========================================================= */
+
+#custom-color-cycle {
+  font-size: 12px;
+  padding: 4px 8px;
+  margin: 4px 4px;
+  background-color: transparent;
+  border: none;
+  transition: color 0.3s ease-in-out;
+}
+
+#custom-color-cycle.red {
+  color: #fb4934;
+}
+
+#custom-color-cycle.orange {
+  color: #fe8019;
+}
+
+#custom-color-cycle.yellow {
+  color: #fabd2f;
+}
+
+#custom-color-cycle.green {
+  color: #b8bb26;
+}
+
+#custom-color-cycle.aqua {
+  color: #8ec07c;
+}
+
+#custom-color-cycle.blue {
+  color: #83a598;
+}
+
+#custom-color-cycle.purple {
+  color: #d3869b;
 }
 
 
@@ -375,7 +412,7 @@ tooltip label {
 #custom-vpn,
 #custom-lmstudio,
 #custom-cheatsheet {
-  font-size: 16px;
-  padding: 2px 4px;
-  margin: 6px 2px;
+  font-size: 12px;
+  padding: 4px 6px;
+  margin: 4px 2px;
 }
