@@ -1,0 +1,43 @@
+# Logs
+*.log
+**/*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Syncthing conflicts
+*.sync-conflict-*
+.stfolder/
+.stversions/
+
+# Editor backups
+*~
+*.swp
+*.swo
+.*.swp
+
+# Secrets (prevent accidental commits)
+.env
+.env.*
+*.pem
+*.key
+**/credentials*
+**/secrets*
+**/*_token*
+**/*_secret*
+
+# SSH keys
+id_rsa*
+id_ed25519*
+id_dsa*
+*.pub
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Backup files (keep .bak for intentional backups)
+# *.bak
