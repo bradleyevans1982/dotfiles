@@ -246,7 +246,8 @@
   "custom/color-cycle": {
     "exec": "~/.config/waybar/scripts/color-cycle.sh",
     "return-type": "json",
-    "interval": 1
+    "interval": 5,
+    "on-click": "~/.config/waybar/scripts/color-cycle.sh --apply"
   }
 }
 

@@ -5,6 +5,13 @@
 # Dependencies: wpctl, awk, bc, seq, printf
 # ───────────────────────────────────────────────────────────
 
+# Get theme from color file
+COLOR_FILE="/tmp/gruvbox-current-accent"
+theme=""
+if [[ -f "$COLOR_FILE" ]]; then
+    theme=$(cat "$COLOR_FILE")
+fi
+
 # Get raw volume and convert to int
 vol_raw=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{ print $2 }')
 vol_int=$(echo "$vol_raw * 100" | bc | awk '{ print int($1) }')
@@ -17,12 +24,12 @@ sink=$(wpctl status | awk '/Sinks:/,/Sources:/' | grep '\*' | cut -d'.' -f2- | s
 
 # Icon logic
 if [ "$is_muted" = true ]; then
-  icon=""
+  icon=""
   vol_int=0
 elif [ "$vol_int" -lt 50 ]; then
-  icon=""
+  icon=""
 else
-  icon=""
+  icon=""
 fi
 
 # ASCII bar
@@ -32,13 +39,22 @@ bar=$(printf '█%.0s' $(seq 1 $filled))
 pad=$(printf '░%.0s' $(seq 1 $empty))
 ascii_bar="[$bar$pad]"
 
-# Color logic (Gruvbox)
-if [ "$is_muted" = true ] || [ "$vol_int" -lt 10 ]; then
-  fg="#fb4934" # gruvbox red
-elif [ "$vol_int" -lt 50 ]; then
-  fg="#fe8019" # gruvbox orange
+# Color logic
+if [ "$is_muted" = true ]; then
+    fg="#fb4934"  # always red when muted
+elif [[ "$theme" == "original" ]]; then
+    # Original multi-color logic
+    if [ "$vol_int" -lt 10 ]; then
+        fg="#fb4934"  # red
+    elif [ "$vol_int" -lt 50 ]; then
+        fg="#fe8019"  # orange
+    else
+        fg="#b8bb26"  # green
+    fi
+elif [[ "$theme" =~ ^# ]]; then
+    fg="$theme"
 else
-  fg="#b8bb26" # gruvbox green
+    fg="#b8bb26"  # fallback green
 fi
 
 # Tooltip text
@@ -50,4 +66,3 @@ fi
 
 # Final JSON output
 echo "{\"text\":\"<span foreground='$fg'>$icon $ascii_bar $vol_int%</span>\",\"tooltip\":\"$tooltip\"}"
-

@@ -1,5 +1,6 @@
 /* ──────────────────────────────────────────────────────────────────────────
-   Waybar CSS styling - Gruvbox Dark Theme
+   Waybar CSS styling - Gruvbox Dark Theme (Auto-generated from template)
+   Current accent: orange
    ────────────────────────────────────────────────────────────────────────── */
 
 /* === Base Waybar Styling ================================================= */
@@ -47,17 +48,17 @@ window#waybar {
   margin: 4px 2px;
   border-radius: 4px;
   background-color: #3c3836;
-  color: #83a598;
+  color: #fe8019;
 }
 
 #workspaces button.active {
   color: #282828;
-  background-color: #fabd2f;
+  background-color: #fe8019;
 }
 
 #workspaces button:hover {
   color: #282828;
-  background-color: #8ec07c;
+  background-color: #d65d0e;
 }
 
 
@@ -76,8 +77,8 @@ window#waybar {
 }
 
 #custom-power.powersaver {
-  color: #fabd2f;
-  border: 2px solid #fabd2f;
+  color: #fe8019;
+  border: 2px solid #fe8019;
 }
 
 #custom-power.performance {
@@ -127,12 +128,12 @@ window#waybar {
 }
 
 #bluetooth.connected {
-  color: #8ec07c;
-  border: 2px solid #8ec07c;
+  color: #fe8019;
+  border: 2px solid #fe8019;
 }
 
 #bluetooth.disabled {
-  color: #fe8019;
+  color: #928374;
 }
 
 #bluetooth.off {
@@ -140,7 +141,7 @@ window#waybar {
 }
 
 #custom-bluetooth {
-  color: #83a598;
+  color: #fe8019;
   transition: color 0.2s ease-in-out;
 }
 
@@ -153,13 +154,13 @@ window#waybar {
 }
 
 #network.wifi {
-  color: #8ec07c;
-  border: 2px solid #8ec07c;
+  color: #fe8019;
+  border: 2px solid #fe8019;
 }
 
 #network.ethernet {
-  color: #8ec07c;
-  border: 2px solid #8ec07c;
+  color: #fe8019;
+  border: 2px solid #fe8019;
 }
 
 #network.disconnected {
@@ -177,7 +178,7 @@ window#waybar {
 #clock {
   font-weight: bold;
   font-size: 10px;
-  color: #7aa2f7;
+  color: #fe8019;
 }
 
 
@@ -193,23 +194,23 @@ window#waybar {
 /* === Volume ============================================================== */
 
 #custom-volume {
-  color: #b8bb26;
+  color: #fe8019;
 }
 
 /* === Now Playing ========================================================= */
 
 #custom-now-playing {
-  color: #d3869b;
+  color: #fe8019;
   font-size: 8px;
 }
 
 #custom-now-playing.playing {
-  color: #d3869b;
-  border: 2px solid #d3869b;
+  color: #fe8019;
+  border: 2px solid #fe8019;
 }
 
 #custom-now-playing.paused {
-  color: #b16286;
+  color: #d65d0e;
 }
 
 #custom-now-playing.stopped {
@@ -225,8 +226,8 @@ window#waybar {
 }
 
 #custom-vpn.connected {
-  color: #8ec07c;
-  border: 2px solid #8ec07c;
+  color: #fe8019;
+  border: 2px solid #fe8019;
 }
 
 #custom-vpn.disconnected {
@@ -300,7 +301,7 @@ window#waybar {
 /* === Open WebUI ========================================================== */
 
 #custom-openwebui {
-  color: #b8bb26;
+  color: #fe8019;
   font-weight: bold;
 }
 
@@ -308,7 +309,7 @@ window#waybar {
 /* === LMStudio ============================================================ */
 
 #custom-lmstudio {
-  color: #83a598;
+  color: #fe8019;
   font-weight: bold;
 }
 
@@ -324,12 +325,16 @@ window#waybar {
 /* === Color Cycle ========================================================= */
 
 #custom-color-cycle {
-  font-size: 12px;
+  font-size: 14px;
   padding: 4px 8px;
   margin: 4px 4px;
   background-color: transparent;
   border: none;
-  transition: color 0.3s ease-in-out;
+  color: #fe8019;
+}
+
+#custom-color-cycle.original {
+  color: #fabd2f;
 }
 
 #custom-color-cycle.red {
@@ -383,8 +388,8 @@ window#waybar {
 #clock:hover,
 #tray:hover {
   background-color: #504945;
-  border: 2px solid #d79921;
-  color: #fabd2f;
+  border: 2px solid #fe8019;
+  color: #fe8019;
   transition: all 0.2s ease-in-out;
 }
 
@@ -394,7 +399,7 @@ window#waybar {
 tooltip {
   color: #ebdbb2;
   background-color: #3c3836;
-  border: 1px solid #d79921;
+  border: 1px solid #fe8019;
   font-weight: bold;
 }
 
