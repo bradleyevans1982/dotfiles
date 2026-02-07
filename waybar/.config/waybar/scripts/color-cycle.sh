@@ -101,6 +101,28 @@ if [[ "$1" == "--apply" ]]; then
         for old in $ALL_DIM; do
             sed -i "s/$old/$accent_dim/gI" "$GTK_CSS"
         done
+
+        # Also replace RGB values in rgba() for box-shadow (dim colors)
+        # Format: "old_r, old_g, old_b|new_r, new_g, new_b"
+        declare -a RGB_DIM=(
+            "204, 36, 29"    # red dim
+            "214, 93, 14"    # orange dim
+            "215, 153, 33"   # yellow dim
+            "152, 151, 26"   # green dim
+            "104, 157, 106"  # aqua dim
+            "69, 133, 136"   # blue dim
+            "177, 98, 134"   # purple dim
+        )
+        # Get new accent RGB from hex (dim version for shadows)
+        new_r=$((16#${accent_dim:1:2}))
+        new_g=$((16#${accent_dim:3:2}))
+        new_b=$((16#${accent_dim:5:2}))
+        new_rgb="$new_r, $new_g, $new_b"
+
+        for old_rgb in "${RGB_DIM[@]}"; do
+            sed -i "s/$old_rgb/$new_rgb/g" "$GTK_CSS"
+        done
+
         pkill thunar 2>/dev/null
     fi
 
