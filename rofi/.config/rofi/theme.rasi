@@ -22,7 +22,7 @@ window {
   blur: true;
   border: 2px;
   border-radius: 3px;
-  border-color: #d79921;
+  border-color: #689d6a;
   background-color: rgba(40, 40, 40, 0.4);
   padding: 0px;
   margin: 30px 50px;
@@ -61,12 +61,12 @@ element {
 element-text, element-icon {
   padding: 6px 8px;
   spacing: 2px;
-  text-color: #ebdbb2;
+  text-color: #8ec07c;
 }
 
 element selected {
   background-color: #3c3836;
-  text-color: #fabd2f;
+  text-color: #8ec07c;
   border-radius: 3px;
 }
 
@@ -74,7 +74,7 @@ element selected {
 prompt {
   enabled: false;
   background-color: transparent;
-  text-color: #d79921;
+  text-color: #689d6a;
   padding: 5px 10px;
 }
 

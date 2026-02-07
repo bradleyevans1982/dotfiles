@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────────────────────────
    Waybar CSS styling - Gruvbox Dark Theme (Auto-generated from template)
-   Current accent: aqua
+   Current accent: {{ACCENT_NAME}}
    ────────────────────────────────────────────────────────────────────────── */
 
 /* === Base Waybar Styling ================================================= */
@@ -47,18 +47,18 @@ window#waybar {
   margin: 4px 2px;
   border-radius: 4px;
   background-color: transparent;
-  color: #8ec07c;
+  color: {{ACCENT}};
 }
 
 #workspaces button.active {
   background-color: transparent;
   color: #83a598;
-  background-color: #8ec07c;
+  background-color: {{ACCENT}};
 }
 
 #workspaces button:hover {
   color: #83a598;
-  background-color: #689d6a;
+  background-color: {{ACCENT_DIM}};
 }
 
 
@@ -72,18 +72,18 @@ window#waybar {
 /* === Default Module Container Styling ==================================== */
 
 #custom-microphone.nightlight {
-  color: #8ec07c;
-  border: 2px solid #8ec07c;
+  color: {{ACCENT}};
+  border: 2px solid {{ACCENT}};
 }
 
 #custom-power.powersaver {
-  color: #8ec07c;
-  border: 2px solid #8ec07c;
+  color: {{ACCENT}};
+  border: 2px solid {{ACCENT}};
 }
 
 #custom-power.performance {
-  color: #8ec07c;
-  border: 2px solid #8ec07c;
+  color: {{ACCENT}};
+  border: 2px solid {{ACCENT}};
 }
 
 #custom-microphone,
@@ -128,8 +128,8 @@ window#waybar {
 }
 
 #bluetooth.connected {
-  color: #8ec07c;
-  border: 2px solid #8ec07c;
+  color: {{ACCENT}};
+  border: 2px solid {{ACCENT}};
 }
 
 #bluetooth.disabled {
@@ -141,7 +141,7 @@ window#waybar {
 }
 
 #custom-bluetooth {
-  color: #8ec07c;
+  color: {{ACCENT}};
   transition: color 0.2s ease-in-out;
 }
 
@@ -154,13 +154,13 @@ window#waybar {
 }
 
 #network.wifi {
-  color: #8ec07c;
-  border: 2px solid #8ec07c;
+  color: {{ACCENT}};
+  border: 2px solid {{ACCENT}};
 }
 
 #network.ethernet {
-  color: #8ec07c;
-  border: 2px solid #8ec07c;
+  color: {{ACCENT}};
+  border: 2px solid {{ACCENT}};
 }
 
 #network.disconnected {
@@ -178,7 +178,7 @@ window#waybar {
 #clock {
   font-weight: bold;
   font-size: 10px;
-  color: #8ec07c;
+  color: {{ACCENT}};
 }
 
 
@@ -187,30 +187,30 @@ window#waybar {
 #custom-asus-profile {
   font-weight: bold;
   font-size: 10px;
-  color: #8ec07c;
+  color: {{ACCENT}};
 }
 
 
 /* === Volume ============================================================== */
 
 #custom-volume {
-  color: #8ec07c;
+  color: {{ACCENT}};
 }
 
 /* === Now Playing ========================================================= */
 
 #custom-now-playing {
-  color: #8ec07c;
+  color: {{ACCENT}};
   font-size: 8px;
 }
 
 #custom-now-playing.playing {
-  color: #8ec07c;
-  border: 2px solid #8ec07c;
+  color: {{ACCENT}};
+  border: 2px solid {{ACCENT}};
 }
 
 #custom-now-playing.paused {
-  color: #689d6a;
+  color: {{ACCENT_DIM}};
 }
 
 #custom-now-playing.stopped {
@@ -226,8 +226,8 @@ window#waybar {
 }
 
 #custom-vpn.connected {
-  color: #8ec07c;
-  border: 2px solid #8ec07c;
+  color: {{ACCENT}};
+  border: 2px solid {{ACCENT}};
 }
 
 #custom-vpn.disconnected {
@@ -292,7 +292,7 @@ window#waybar {
 #custom-workspace-2:hover,
 #custom-workspace-3:hover,
 #custom-workspace-4:hover {
-  color: #8ec07c;
+  color: {{ACCENT}};
   transition: all 0.2s ease-in-out;
 }
 
@@ -301,7 +301,7 @@ window#waybar {
 /* === Open WebUI ========================================================== */
 
 #custom-openwebui {
-  color: #8ec07c;
+  color: {{ACCENT}};
   font-weight: bold;
 }
 
@@ -309,7 +309,7 @@ window#waybar {
 /* === LMStudio ============================================================ */
 
 #custom-lmstudio {
-  color: #8ec07c;
+  color: {{ACCENT}};
   font-weight: bold;
 }
 
@@ -317,7 +317,7 @@ window#waybar {
 /* === Cheatsheet ========================================================== */
 
 #custom-cheatsheet {
-  color: #8ec07c;
+  color: {{ACCENT}};
   font-weight: bold;
 }
 
@@ -330,7 +330,7 @@ window#waybar {
   margin: 4px 4px;
   background-color: transparent;
   border: none;
-  color: #8ec07c;
+  color: {{ACCENT}};
 }
 
 #custom-color-cycle.original {
@@ -388,8 +388,8 @@ window#waybar {
 #clock:hover,
 #tray:hover {
   background-color: #504945;
-  border: 2px solid #8ec07c;
-  color: #8ec07c;
+  border: 2px solid {{ACCENT}};
+  color: {{ACCENT}};
   transition: all 0.2s ease-in-out;
 }
 
@@ -399,7 +399,7 @@ window#waybar {
 tooltip {
   color: #ebdbb2;
   background-color: transparent;
-  border: 1px solid #8ec07c;
+  border: 1px solid {{ACCENT}};
   font-weight: bold;
 }
 
