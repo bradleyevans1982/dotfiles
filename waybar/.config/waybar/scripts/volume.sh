@@ -22,14 +22,14 @@ is_muted=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED && echo true ||
 # Get default sink description (human-readable)
 sink=$(wpctl status | awk '/Sinks:/,/Sources:/' | grep '\*' | cut -d'.' -f2- | sed 's/^\s*//; s/\[.*//')
 
-# Icon logic
+# Icon logic (using Material Design icons that render in JetBrainsMono NFM)
 if [ "$is_muted" = true ]; then
-  icon=""
+  icon="󰖁"
   vol_int=0
 elif [ "$vol_int" -lt 50 ]; then
-  icon=""
+  icon="󰕿"
 else
-  icon=""
+  icon="󰕾"
 fi
 
 # ASCII bar

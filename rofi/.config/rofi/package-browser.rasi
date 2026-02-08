@@ -19,8 +19,8 @@ window {
   location: center;
   blur: true;
   border: 2px;
-  border-radius: 3px;
-  border-color: #98971a;
+  border-radius: 8px;
+  border-color: #b48353;
   background-color: rgba(40, 40, 40, 0.4);
   padding: 0px;
   margin: 30px 50px;
@@ -39,7 +39,7 @@ borderbox {
   children: [ "contentbox" ];
   padding: 0px;
   spacing: 0px;
-  border-radius: 3px;
+  border-radius: 8px;
   background-color: rgba(40, 40, 40, 0.4);
 }
 
@@ -55,12 +55,12 @@ contentbox {
 message {
   padding: 8px 12px;
   background-color: rgba(60, 56, 54, 0.6);
-  text-color: #98971a;
-  border-radius: 3px 3px 0px 0px;
+  text-color: #b48353;
+  border-radius: 8px 8px 0px 0px;
 }
 
 textbox {
-  text-color: #98971a;
+  text-color: #b48353;
   background-color: transparent;
 }
 
@@ -73,7 +73,7 @@ inputbar {
 prompt {
   enabled: true;
   background-color: transparent;
-  text-color: #98971a;
+  text-color: #b48353;
   padding: 8px 10px;
 }
 
@@ -81,7 +81,7 @@ entry {
   padding: 8px;
   expand: true;
   font: "JetBrainsMono Nerd Font 12";
-  text-color: #b8bb26;
+  text-color: #d4a373;
   border-radius: 0px;
   background-color: rgba(40, 40, 40, 0.4);
 }
@@ -91,13 +91,13 @@ listview {
   lines: 20;
   scrollbar: true;
   background-color: rgba(40, 40, 40, 0.4);
-  border-radius: 0px 0px 3px 3px;
+  border-radius: 0px 0px 8px 8px;
   padding: 5px;
 }
 
 scrollbar {
   width: 4px;
-  handle-color: #98971a;
+  handle-color: #b48353;
   handle-width: 4px;
   background-color: rgba(60, 56, 54, 0.4);
 }
@@ -110,11 +110,11 @@ element {
 element-text, element-icon {
   padding: 6px 8px;
   spacing: 2px;
-  text-color: #b8bb26;
+  text-color: #d4a373;
 }
 
 element selected {
   background-color: #3c3836;
-  text-color: #b8bb26;
-  border-radius: 3px;
+  text-color: #d4a373;
+  border-radius: 8px;
 }

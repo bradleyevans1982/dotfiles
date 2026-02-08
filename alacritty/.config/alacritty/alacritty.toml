@@ -6,7 +6,7 @@
 
 # ── Cursor & Selection Colours ───────────────────────────────────────────
 [colors.cursor]
-cursor = "#b8bb26"
+cursor = "#d4a373"
 text   = "#282828"
 
 [colors.selection]
@@ -16,7 +16,7 @@ background = "#504945"
 # ── Primary Colours ───────────────────────────────────────────────────────
 [colors.primary]
 background = "#282828"
-foreground = "#b8bb26"
+foreground = "#d4a373"
 
 # ── Normal Palette (ANSI) ────────────────────────────────────────────────
 [colors.normal]
@@ -32,12 +32,12 @@ white   = "#a89984"
 # ── Bright Palette (ANSI) ────────────────────────────────────────────────
 [colors.bright]
 black   = "#928374"
-red     = "#b8bb26"
-green   = "#b8bb26"
-yellow  = "#b8bb26"
-blue    = "#b8bb26"
-magenta = "#b8bb26"
-cyan    = "#b8bb26"
+red     = "#d4a373"
+green   = "#d4a373"
+yellow  = "#d4a373"
+blue    = "#d4a373"
+magenta = "#d4a373"
+cyan    = "#d4a373"
 white   = "#ebdbb2"
 
 # ── Font Settings ────────────────────────────────────────────────────────

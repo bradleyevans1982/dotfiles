@@ -8,14 +8,15 @@ TEMPLATE="$HOME/.config/waybar/style.css.template"
 OUTPUT="$HOME/.config/waybar/style.css"
 
 # Gruvbox colors: name, bright, dim
+# Pastel/muted palette matching the soft blue aesthetic
 declare -a COLORS=(
-    "red|#fb4934|#cc241d"
-    "orange|#fe8019|#d65d0e"
-    "yellow|#fabd2f|#d79921"
-    "green|#b8bb26|#98971a"
-    "aqua|#8ec07c|#689d6a"
-    "blue|#83a598|#458588"
-    "purple|#d3869b|#b16286"
+    "mauve|#a898b8|#887898"
+    "peach|#d4a373|#b48353"
+    "brick|#c08070|#a06050"
+    "straw|#c8b878|#a89858"
+    "mint|#8ec07c|#689d6a"
+    "amber|#c89070|#a87050"
+    "teal|#70a8a8|#508888"
 )
 
 # Get current index or start at 0
@@ -63,9 +64,9 @@ if [[ "$1" == "--apply" ]]; then
     hyprctl keyword general:col.inactive_border "rgba(${hypr_accent_dim}88)" >/dev/null 2>&1
     hyprctl keyword decoration:shadow:color "rgba(${hypr_accent_dim}ee)" >/dev/null 2>&1
 
-    # All gruvbox accent colors (bright and dim)
-    ALL_BRIGHT="#fb4934 #fe8019 #fabd2f #b8bb26 #8ec07c #83a598 #d3869b"
-    ALL_DIM="#cc241d #d65d0e #d79921 #98971a #689d6a #458588 #b16286"
+    # All accent colors (bright and dim) - pastel palette + old gruvbox for compatibility
+    ALL_BRIGHT="#a898b8 #d4a373 #c08070 #c8b878 #8ec07c #c89070 #70a8a8 #fb4934 #fe8019 #fabd2f #b8bb26 #83a598 #d3869b #d4c4a1 #d4a0a0 #c4a7c7 #a9b665"
+    ALL_DIM="#887898 #b48353 #a06050 #a89858 #689d6a #a87050 #508888 #cc241d #d65d0e #d79921 #98971a #458588 #b16286 #b4a481 #b48080 #a487a7 #899646"
 
     # Update rofi themes - replace ALL accent colors with new
     for rofi_file in "$HOME/.config/rofi/theme.rasi" "$HOME/.config/rofi/package-browser.rasi"; do
@@ -103,15 +104,25 @@ if [[ "$1" == "--apply" ]]; then
         done
 
         # Also replace RGB values in rgba() for box-shadow (dim colors)
-        # Format: "old_r, old_g, old_b|new_r, new_g, new_b"
+        # Includes new pastel + old gruvbox for compatibility
         declare -a RGB_DIM=(
-            "204, 36, 29"    # red dim
-            "214, 93, 14"    # orange dim
-            "215, 153, 33"   # yellow dim
-            "152, 151, 26"   # green dim
-            "104, 157, 106"  # aqua dim
-            "69, 133, 136"   # blue dim
-            "177, 98, 134"   # purple dim
+            "136, 120, 152"  # mauve dim
+            "180, 131, 83"   # peach dim
+            "160, 96, 80"    # brick dim
+            "168, 152, 88"   # straw dim
+            "104, 157, 106"  # mint dim
+            "168, 112, 80"   # amber dim
+            "80, 136, 136"   # teal dim
+            "204, 36, 29"    # old red dim
+            "214, 93, 14"    # old orange dim
+            "215, 153, 33"   # old yellow dim
+            "152, 151, 26"   # old green dim
+            "69, 133, 136"   # old blue dim
+            "177, 98, 134"   # old purple dim
+            "180, 164, 129"  # old sand dim
+            "180, 128, 128"  # old rose dim
+            "164, 135, 167"  # old lavender dim
+            "137, 150, 70"   # old sage dim
         )
         # Get new accent RGB from hex (dim version for shadows)
         new_r=$((16#${accent_dim:1:2}))

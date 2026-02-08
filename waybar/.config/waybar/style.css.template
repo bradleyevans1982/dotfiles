@@ -22,11 +22,11 @@ waybar * {
 }
 
 window#waybar {
-  background: rgba(40, 40, 40, 0.82);
+  background: rgba(40, 40, 40, 0.75);
   transition-property: background-color;
   transition-duration: 0.5s;
   color: #ebdbb2;
-  border: none;
+  border: 1px solid {{ACCENT_DIM}};
 }
 
 
