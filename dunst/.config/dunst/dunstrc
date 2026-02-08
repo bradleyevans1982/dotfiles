@@ -31,7 +31,7 @@
     horizontal_padding = 12
     text_icon_padding = 12
     frame_width = 3
-    frame_color = "#508888"
+    frame_color = "#887898"
     gap_size = 6
     separator_color = frame
     corner_radius = 8
@@ -83,24 +83,24 @@
     foreground = "#ebdbb2"
     frame_color = "#504945"
     timeout = 5
-    highlight = "#70a8a8"
+    highlight = "#a898b8"
 
 [urgency_normal]
     background = "#1d2021D9"
     foreground = "#ebdbb2"
-    frame_color = "#508888"
+    frame_color = "#887898"
     timeout = 8
-    highlight = "#70a8a8"
+    highlight = "#a898b8"
 
 [urgency_critical]
     background = "#1d2021E6"
     foreground = "#ebdbb2"
-    frame_color = "#70a8a8"
+    frame_color = "#a898b8"
     timeout = 0
-    highlight = "#508888"
+    highlight = "#887898"
 
 # ── App-specific Rules ─────────────────────────────────────────────────────
 
 [tailscale]
     appname = Tailscale
-    frame_color = "#70a8a8"
+    frame_color = "#a898b8"
